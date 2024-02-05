@@ -20,6 +20,6 @@ elif [ "$MAJOR_BUILD" -eq "$MAJOR_CURRENT" ]; then
   fi
 fi
 
-curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/${FILEBEAT_CHANNEL}-${FILEBEAT_VERSION}-amd64.deb &&\
-dpkg -i ${FILEBEAT_CHANNEL}-${FILEBEAT_VERSION}-amd64.deb && rm -f ${FILEBEAT_CHANNEL}-${FILEBEAT_VERSION}-amd64.deb && \
+curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/${FILEBEAT_CHANNEL}-${FILEBEAT_VERSION}-arm64.deb &&\
+dpkg -i ${FILEBEAT_CHANNEL}-${FILEBEAT_VERSION}-arm64.deb && rm -f ${FILEBEAT_CHANNEL}-${FILEBEAT_VERSION}-arm64.deb && \
 curl -s https://${REPOSITORY}/filebeat/${WAZUH_FILEBEAT_MODULE} | tar -xvz -C /usr/share/filebeat/module
