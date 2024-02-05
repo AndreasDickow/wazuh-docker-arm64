@@ -24,11 +24,11 @@ RUN chmod 775 /filebeat_module.sh
 RUN source /filebeat_module.sh
 
 ARG S6_VERSION="v2.2.0.3"
-RUN curl --fail --silent -L https://github.com/just-containers/s6-overlay/releases/download/${S6_VERSION}/s6-overlay-amd64.tar.gz \
-    -o /tmp/s6-overlay-amd64.tar.gz && \
-    tar xzf /tmp/s6-overlay-amd64.tar.gz -C / --exclude="./bin" && \
-    tar xzf /tmp/s6-overlay-amd64.tar.gz -C /usr ./bin && \
-    rm  /tmp/s6-overlay-amd64.tar.gz
+RUN curl --fail --silent -L https://github.com/just-containers/s6-overlay/releases/download/${S6_VERSION}/s6-overlay-aarch64.tar.gz \
+    -o /tmp/s6-overlay-aarch64.tar.gz && \
+    tar xzf /tmp/s6-overlay-aarch64.tar.gz -C / --exclude="./bin" && \
+    tar xzf /tmp/s6-overlay-aarch64.tar.gz -C /usr ./bin && \
+    rm  /tmp/s6-overlay-aarch64.tar.gz
 
 COPY config/etc/ /etc/
 COPY --chown=root:wazuh config/create_user.py /var/ossec/framework/scripts/create_user.py
